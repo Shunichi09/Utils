@@ -1,0 +1,14 @@
+﻿# 無視するファイル
+*.png
+*.txt
+*.csv
+*.db
+*.out
+*.log
+*.md
+*.pickle
+*.cache
+*.py[cod]
+
+# 無視するディレクトリ
+__pycache__/

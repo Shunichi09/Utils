@@ -1,7 +1,5 @@
 import pytest
 import math
-import sys
-sys.path.append('..')
 import glob
 from utils.circle import circle_make, plot_singles
 
@@ -29,6 +27,5 @@ def test_plot_singles():
 
     plot_singles(x, y)
 
-    # osを使って内部のファイルを確認
     # imgがあればおっけ
     assert glob.glob('./tests/*.png') is not None

@@ -39,7 +39,7 @@ python setup.py test
 ```
 
 # Documents
-You can find researchutils documentation [here](https://researchutils.readthedocs.io/)
+You can find researchutils documentation [here](https://shunichi09.github.io/Utils/)
 
 # Contribution guide
 New features and bug fixes are welcome. Send PRs. <br/>

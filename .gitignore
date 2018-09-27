@@ -1,5 +1,4 @@
 ﻿# 無視するファイル
-*.png
 *.txt
 *.csv
 *.db
@@ -7,8 +6,14 @@
 *.log
 *.md
 *.pickle
-*.cache
-*.py[cod]
+*.mp4
 
 # 無視するディレクトリ
-__pycache__/
+log_data/
+output_log/
+log/
+params/
+original_data/
+edited_data/
+params_backup/
+predict_data/

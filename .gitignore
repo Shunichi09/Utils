@@ -1,10 +1,6 @@
 ﻿# 無視するファイル
-*.txt
 *.csv
-*.db
-*.out
 *.log
-*.md
 *.pickle
 *.mp4
 
@@ -13,7 +9,3 @@ log_data/
 output_log/
 log/
 params/
-original_data/
-edited_data/
-params_backup/
-predict_data/

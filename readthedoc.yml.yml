@@ -1,4 +1,4 @@
-name: researchutils
+name: utils
 type: sphinx
 base: docs
 python:

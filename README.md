@@ -37,5 +37,5 @@ python setup.py test
 ```
 
 # Documents
-You can find utils documentation [here](https://shunichi09.github.io/Utils/)
+You can find utils documentation [here](https://utils.readthedocs.io/)\n
 まだ完成していませんが，ドキュメントはこちらで見れます

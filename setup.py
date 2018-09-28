@@ -1,16 +1,16 @@
 from setuptools import find_packages
 from setuptools import setup
 
-install_requires = ['numpy', 'tensorflow', 'slackclient', 'matplotlib<=2.2.3', 'six']
+install_requires = ['numpy', 'tensorflow', 'matplotlib<=2.2.3', 'six']
 tests_require = ['pytest>=3.2.0', 'mock']
 setup_requires = ["pytest-runner"]
 
 setup(
-    name='research_utils',
+    name='utils',
     version='0.0.1',
-    description='For my research utils',
+    description='Useful functions for my research',
     author='Shunichi Sekiguchi',
-    author_email='quick1st97@keio.jp',
+    author_email='quick1st97of@gmail.com',
     install_requires=install_requires,
     url='https://github.com/Shunichi09/Utils',
     license='MIT License',

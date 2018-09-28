@@ -37,5 +37,5 @@ python setup.py test
 ```
 
 # Documents
-You can find utils documentation [here](https://utils.readthedocs.io/)\n
+You can find utils documentation [here](https://utils.readthedocs.io/)
 まだ完成していませんが，ドキュメントはこちらで見れます

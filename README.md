@@ -41,4 +41,5 @@ python setup.py test
 
 # Documents
 You can find utils documentation [here](https://shunichi09.github.io/Utils/)
-まだ完成していませんが，ドキュメントはこちらで見れます
+
+まだ完成していませんが，ドキュメントはこちらで見れます，確認をお願い致します。

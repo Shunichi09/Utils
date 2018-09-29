@@ -9,4 +9,6 @@
 .eggs/
 __pycache__/
 utils.egg-info/
-.pytest_cache/
+.pytest_cache
+cache/
+

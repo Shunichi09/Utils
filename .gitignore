@@ -9,3 +9,5 @@ tests/
 build/
 .eggs
 .cache
+__pycache__
+utils.egg-info

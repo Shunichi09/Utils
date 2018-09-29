@@ -6,3 +6,4 @@ API Reference
    :maxdepth: 1
 
    func_angle
+   func_data

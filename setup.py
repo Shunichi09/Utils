@@ -1,8 +1,8 @@
 from setuptools import find_packages
 from setuptools import setup
 
-install_requires = ['numpy', 'tensorflow', 'matplotlib<=2.2.3', 'six']
-tests_require = ['pytest>=3.2.0', 'mock']
+install_requires = ['numpy', 'matplotlib']
+tests_require = ['pytest']
 setup_requires = ["pytest-runner"]
 
 setup(

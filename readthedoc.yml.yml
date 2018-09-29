@@ -1,5 +1,0 @@
-name: utils
-type: sphinx
-base: docs
-python:
-    setup_py_install: true

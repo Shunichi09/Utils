@@ -9,5 +9,4 @@
 .eggs/
 __pycache__/
 utils.egg-info/
-utils/
 .pytest_cache/

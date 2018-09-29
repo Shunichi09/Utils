@@ -7,6 +7,5 @@
 # 無視するディレクトリ
 tests/
 build/
-utils/
 .eggs
 .cache

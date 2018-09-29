@@ -5,9 +5,7 @@
 *.mp4
 
 # 無視するディレクトリ
-tests/
-build/
-.eggs
-.cache
-__pycache__
-utils.egg-info
+.cache/
+.eggs/
+__pycache__/
+utils.egg-info/

@@ -1,8 +1,10 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/Shunichi09/Utils/badge.svg?branch=master)](https://coveralls.io/github/Shunichi09/Utils?branch=master)
+[![Build Status](https://travis-ci.org/Shunichi09/Utils.svg?branch=master)](https://travis-ci.org/Shunichi09/Utils)
 
 # Utils
 Python utilities for robot motion controlling
+
 pythonで書かれたロボット制御のutilsです
 
 # How to use

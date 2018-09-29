@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 def circle_make(center_x, center_y, radius):
     '''
@@ -6,67 +7,58 @@ def circle_make(center_x, center_y, radius):
     Parameters
     -------
     center_x : float
-        円の中心x座標
+        the center x position of the circle
     center_y : float
-        円の中心y座標
+        the center y position of the circle
     radius : float
-        円の半径
 
     Returns
     -------
     circle x : numpy.ndarray
-        円のx座標群
     circle y : numpy.ndarray
-        円のy座標群
     '''
 
     point_num = 100 # 分解能
 
-    circle_x = []
-    circle_y = []
+    circle_xs = []
+    circle_ys = []
 
     for i in range(point_num + 1):
-        circle_x.append(center_x + radius * math.cos(i*2*math.pi/point_num))
-        circle_y.append(center_y + radius * math.sin(i*2*math.pi/point_num))
+        circle_xs.append(center_x + radius * math.cos(i*2*math.pi/point_num))
+        circle_ys.append(center_y + radius * math.sin(i*2*math.pi/point_num))
 
-    return circle_x, circle_y
+    return np.array(circle_xs), np.array(circle_ys)
 
-def circle_make_with_angles(center_x, center_y, angle, radius):
-    '''
-    Create circle matrix with angle lines
+def circle_make_with_angles(center_x, center_y, radius, angle):
+    ''''
+    Create circle matrix
     Parameters
     -------
     center_x : float
-        円の中心x座標
+        the center x position of the circle
     center_y : float
-        円の中心y座標
+        the center y position of the circle
     radius : float
-        円の半径
-    angle : float
-        傾き，向き
-
+    angle : float [rad]
+    
     Returns
     -------
-    circle x : numpy.ndarray
-        円のx座標群
-    circle y : numpy.ndarray
-        円のy座標群
-    angle_line x : numpy.ndarray
-        円の傾きのx座標群
-    angle_line y : numpy.ndarray
-        円の傾きのy座標群
+    circle xs : numpy.ndarray
+    circle ys : numpy.ndarray
+    angle line xs : numpy.ndarray
+    angle line ys : numpy.ndarray
     '''
 
     point_num = 100 # 分解能
 
-    circle_x = []
-    circle_y = []
+    circle_xs = []
+    circle_ys = []
 
     for i in range(point_num + 1):
-        circle_x.append(center_x + radius * math.cos(i*2*math.pi/point_num))
-        circle_y.append(center_y + radius * math.sin(i*2*math.pi/point_num))
+        circle_xs.append(center_x + radius * math.cos(i*2*math.pi/point_num))
+        circle_ys.append(center_y + radius * math.sin(i*2*math.pi/point_num))
 
-    angle_line_x = [center_x, center_x + math.cos(angle) * radius]
-    angle_line_y = [center_y, center_y + math.sin(angle) * radius]
+    angle_line_xs = [center_x, center_x + math.cos(angle) * radius]
+    angle_line_ys = [center_y, center_y + math.sin(angle) * radius]
 
-    return circle_x, circle_y, angle_line_x, angle_line_y
+    return np.array(circle_xs), np.array(circle_ys), np.array(angle_line_xs), np.array(angle_line_ys)

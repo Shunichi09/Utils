@@ -1,5 +1,5 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Coverage Status](https://coveralls.io/github/Shunichi09/Utils/badge.svg?branch=master)](https://coveralls.io/github/Shunichi09/Utils?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Shunichi09/Utils/badge.svg?branch=master)](https://coveralls.io/github/Shunichi09/Utils?branch=master)
 
 # researchutils
 Python utilities for robot motion controlling

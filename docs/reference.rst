@@ -7,3 +7,5 @@ API Reference
 
    func_angle
    func_data
+   func_drawing
+   

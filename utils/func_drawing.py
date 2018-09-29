@@ -4,6 +4,7 @@ import numpy as np
 def circle_make(center_x, center_y, radius):
     '''
     Create circle matrix
+
     Parameters
     -------
     center_x : float
@@ -32,6 +33,7 @@ def circle_make(center_x, center_y, radius):
 def circle_make_with_angles(center_x, center_y, radius, angle):
     ''''
     Create circle matrix
+    
     Parameters
     -------
     center_x : float

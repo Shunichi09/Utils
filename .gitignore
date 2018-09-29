@@ -1,0 +1,9 @@
+﻿# 無視するファイル
+*.csv
+*.log
+*.pickle
+*.mp4
+
+# 無視するディレクトリ
+tests/
+build/

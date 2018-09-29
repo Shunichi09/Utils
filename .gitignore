@@ -8,3 +8,4 @@
 .cache/
 .eggs/
 __pycache__/
+utils.egg-info/

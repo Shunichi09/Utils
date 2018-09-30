@@ -7,3 +7,9 @@ Angle
 
 .. automodule:: utils.func_angle
    :members:
+
+Coordinate transformation
+==========================
+
+.. automodule:: utils.func_coordinate_trans
+   :members:

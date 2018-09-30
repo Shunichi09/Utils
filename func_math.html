@@ -15,9 +15,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Utilities related to data" href="func_data.html" />
-    <link rel="prev" title="API Reference" href="reference.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -28,14 +26,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="func_data.html" title="Utilities related to data"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="reference.html" title="API Reference"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Utils 0.0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="reference.html" accesskey="U">API Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Utils 0.0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -110,6 +101,60 @@
 </dd></dl>
 
 </div>
+<div class="section" id="module-utils.func_coordinate_trans">
+<span id="coordinate-transformation"></span><h2>Coordinate transformation<a class="headerlink" href="#module-utils.func_coordinate_trans" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="utils.func_coordinate_trans.coordinate_transformation_in_angle">
+<code class="descclassname">utils.func_coordinate_trans.</code><code class="descname">coordinate_transformation_in_angle</code><span class="sig-paren">(</span><em>positions</em>, <em>base_angle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/func_coordinate_trans.html#coordinate_transformation_in_angle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.func_coordinate_trans.coordinate_transformation_in_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transformation the coordinate in the angle</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>positions</strong> (<em>numpy.ndarray</em>) – this parameter is composed of xs, ys
+should have (2, N) shape</li>
+<li><strong>base_angle</strong> (<em>float</em><em> [</em><em>rad</em><em>]</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>traslated_positions</strong> – the shape is (2, N)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numpy.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.func_coordinate_trans.coordinate_transformation_in_position">
+<code class="descclassname">utils.func_coordinate_trans.</code><code class="descname">coordinate_transformation_in_position</code><span class="sig-paren">(</span><em>positions</em>, <em>base_positions</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/func_coordinate_trans.html#coordinate_transformation_in_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.func_coordinate_trans.coordinate_transformation_in_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transformation the coordinate in the positions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>positions</strong> (<em>numpy.ndarray</em>) – this parameter is composed of xs, ys
+should have (2, N) shape</li>
+<li><strong>base_positions</strong> (<em>numpy.ndarray</em>) – this parameter is composed of x, y
+shoulg have (2, 1) shape</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>traslated_positions</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numpy.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -122,20 +167,15 @@
   <ul>
 <li><a class="reference internal" href="#">Utilities related to math</a><ul>
 <li><a class="reference internal" href="#module-utils.func_angle">Angle</a></li>
+<li><a class="reference internal" href="#module-utils.func_coordinate_trans">Coordinate transformation</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="reference.html"
-                        title="previous chapter">API Reference</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="func_data.html"
-                        title="next chapter">Utilities related to data</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/func_angle.rst.txt"
+      <li><a href="_sources/func_math.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -164,14 +204,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="func_data.html" title="Utilities related to data"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="reference.html" title="API Reference"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Utils 0.0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="reference.html" >API Reference</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Utils 0.0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

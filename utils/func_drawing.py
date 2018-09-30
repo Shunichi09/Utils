@@ -31,8 +31,8 @@ def circle_make(center_x, center_y, radius):
     return np.array(circle_xs), np.array(circle_ys)
 
 def circle_make_with_angles(center_x, center_y, radius, angle):
-    ''''
-    Create circle matrix
+    '''
+    Create circle matrix with angle line matrix
     
     Parameters
     -------

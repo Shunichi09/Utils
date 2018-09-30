@@ -27,6 +27,7 @@ def deg_to_rad(deg_angle):
     -------
     angle : float or numpy.ndarray [deg]
         unit is radians
+        
     Returns
     -------
     rad_angle : float or numpy.ndarray [rad]

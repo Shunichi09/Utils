@@ -52,9 +52,9 @@ class TestRobot(object):
 
         robot.update_state(1.0, 1.0)
 
-        assert round(robot.x, 5) == round(1.0 * 0.01 * math.cos(1.1) + 0.5, 5)
-        assert round(robot.y, 5) == round(1.0 * 0.01 * math.sin(1.1) - 0.5, 5)
-        assert robot.th == 1.1 + 1.75 * 0.01
+        assert round(robot.x, 6) == round(1.0 * 0.01 * 0.01 * math.cos(1.1) + 0.5, 6)
+        assert round(robot.y, 6) == round(1.0 * 0.01 * 0.01 * math.sin(1.1) - 0.5, 6)
+        assert robot.th == 1.1 + 1.75 * 0.01 * 0.01
 
     def test_OmniWheeleRobot_update_conditions(self):
         robot = OmniWheeledRobot(0.5, -0.5, 1.1)
@@ -63,16 +63,16 @@ class TestRobot(object):
 
         assert round(robot.x, 5) == round(1.0 + 0.5, 5)
         assert round(robot.y, 5) == round(1.0 - 0.5, 5)
-        assert robot.th == 1.1
+        assert robot.th == 2.1
 
     def test_OmniWheeleRobot_update_conditions_with_overlimit_inputs(self):
         robot = OmniWheeledRobot(0.5, -0.5, 1.1)
 
         robot.update_state(1.0, 1.0, 1.0)
 
-        assert round(robot.x, 5) == round(1.0 * 0.01 + 0.5, 5)
-        assert round(robot.y, 5) == round(1.0 * 0.01 - 0.5, 5)
-        assert robot.th == 1.1 + 1.75 * 0.01
+        assert round(robot.x, 5) == round(1.0 * 0.01 * 0.01 + 0.5, 5)
+        assert round(robot.y, 5) == round(1.0 * 0.01 * 0.01 - 0.5, 5)
+        assert robot.th == 1.1 + 1.75 * 0.01 * 0.01
 
 
 

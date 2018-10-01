@@ -24,9 +24,9 @@ class TestAngle(object):
         correct_angles = fit_angle_in_range(angles)
 
         for i, angle in enumerate(correct_angles):
-            if angle > 0.0:
+            if angle < 0.0:
                 assert False
-            elif angle < 2 * math.pi:
+            elif angle > 2 * math.pi:
                 assert False
             elif round(math.cos(float(angle)), 5) != round(math.cos(angles[i]), 5):
                 assert False
@@ -38,9 +38,9 @@ class TestAngle(object):
         correct_angles = fit_angle_in_range(angles)
 
         for i, angle in enumerate(correct_angles[0]):
-            if angle > 0.0:
+            if angle < 0.0:
                 assert False
-            elif angle < 2 * math.pi:
+            elif angle > 2 * math.pi:
                 assert False
             elif round(math.cos(float(angle)), 5) != round(math.cos(angles[0, i]), 5):
                 assert False

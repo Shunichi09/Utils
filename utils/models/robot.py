@@ -319,12 +319,14 @@ class OmniWheeledRobot():
 
         Parameter
         ----------
+        u_v_x : float in [m/s]
+            t time of velocity input
+        u_v_y : float in [m/s]
+            t time of velocity input 
         u_th : float in [rad/s]
             t time of angular velocity input
-        u_v : float in [m/s]
-            t time of velocity input 
-        dt : float in seconds
-            sampling time
+        dt : float in seconds, optional
+            sampling time, default is 0.01 [s]
         
         Return
         ----------

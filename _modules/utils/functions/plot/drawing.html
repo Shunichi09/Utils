@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>utils.functions.plot.drawing &mdash; Utils 0.0.1 documentation</title>
+  
+    <link rel="stylesheet" href="../../../../_static/general.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="search" title="Search" href="../../../../search.html" />
+  <!-- Sticky footer -->
+  <!--[if  IE 8]>
+  <style type="text/css">
+    #wrap {display:table;}
+  </style>
+  <![endif]--> 
+</head>
+<body>
+<div id="wrapper">
+  
+  <!-- header -->
+  <div id="header">
+    <div id="projInfo">
+      <h1 id="title">
+        <a href="../../../../index.html">Utils</a>
+      </h1>
+      <p class="docdesc">Utils 0.0.1 documentation</p>
+    </div>
+    <div id="headerNav">
+      <div id="searchbox">
+        <form name="search" action="../../../../search.html" method="get">
+          <fieldset class="search">
+            <input type="text" class="hint" name="q" />
+            <button class="button" title="Go" />Go</button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="gnav">
+  <ul>
+    <li class="home"><p><a href="../../../../index.html" title="Utils">Utils</a></p></li>
+    <li class="doc"><p><a href="../../../../index.html" title="ドキュメント">ドキュメント</a></p></li>
+    <li class="modindex">
+      <p><a title="Index" href="../../../../genindex.html">Index</a></p>
+    </li>
+  </ul>
+</div>
+  </div>
+  <!-- /header -->
+  
+  
+  <!-- content -->
+  <div id="content">
+    <!-- current document area -->
+    <div id="document" class="left">
+  <h1>Source code for utils.functions.plot.drawing</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<div class="viewcode-block" id="circle_make"><a class="viewcode-back" href="../../../../plot.html#utils.functions.plot.drawing.circle_make">[docs]</a><span class="k">def</span> <span class="nf">circle_make</span><span class="p">(</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create circle matrix</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    center_x : float</span>
+<span class="sd">        the center x position of the circle</span>
+<span class="sd">    center_y : float</span>
+<span class="sd">        the center y position of the circle</span>
+<span class="sd">    radius : float</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    circle x : numpy.ndarray</span>
+<span class="sd">    circle y : numpy.ndarray</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">point_num</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># 分解能</span>
+
+    <span class="n">circle_xs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">circle_ys</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">point_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">circle_xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">center_x</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">point_num</span><span class="p">))</span>
+        <span class="n">circle_ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">center_y</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">point_num</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">circle_xs</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">circle_ys</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="circle_make_with_angles"><a class="viewcode-back" href="../../../../plot.html#utils.functions.plot.drawing.circle_make_with_angles">[docs]</a><span class="k">def</span> <span class="nf">circle_make_with_angles</span><span class="p">(</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create circle matrix with angle line matrix</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    center_x : float</span>
+<span class="sd">        the center x position of the circle</span>
+<span class="sd">    center_y : float</span>
+<span class="sd">        the center y position of the circle</span>
+<span class="sd">    radius : float</span>
+<span class="sd">    angle : float [rad]</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    circle xs : numpy.ndarray</span>
+<span class="sd">    circle ys : numpy.ndarray</span>
+<span class="sd">    angle line xs : numpy.ndarray</span>
+<span class="sd">    angle line ys : numpy.ndarray</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">point_num</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># 分解能</span>
+
+    <span class="n">circle_xs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">circle_ys</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">point_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">circle_xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">center_x</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">point_num</span><span class="p">))</span>
+        <span class="n">circle_ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">center_y</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">point_num</span><span class="p">))</span>
+
+    <span class="n">angle_line_xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_x</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span><span class="p">]</span>
+    <span class="n">angle_line_ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">center_y</span><span class="p">,</span> <span class="n">center_y</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">radius</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">circle_xs</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">circle_ys</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">angle_line_xs</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">angle_line_ys</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+    <!-- /current document area -->
+    <!-- sidebar -->
+    
+  <div id="sidebar" class="left">
+    <div id="sidebarWrap">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>
+    <!-- /sidebar -->
+  </div>
+  
+  <!-- /content -->
+</div>
+  <!-- footer -->
+  <div id="footer">
+  <div class="footerCol">
+    <h1><a href="../../../../index.html">Utils</a></h1>
+    <p class="copy">
+      &copy; Copyright 2018, Shunichi Sekiguchi.
+    </p>
+    <p class="sp">
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </p>
+  </div>
+  <div class="footerCol">
+    
+  <div class="relbar">
+  </div>
+  </div>
+</div>
+  
+  <!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>utils.functions.math.coordinate_trans &mdash; Utils 0.0.1 documentation</title>
+  
+    <link rel="stylesheet" href="../../../../_static/general.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="search" title="Search" href="../../../../search.html" />
+  <!-- Sticky footer -->
+  <!--[if  IE 8]>
+  <style type="text/css">
+    #wrap {display:table;}
+  </style>
+  <![endif]--> 
+</head>
+<body>
+<div id="wrapper">
+  
+  <!-- header -->
+  <div id="header">
+    <div id="projInfo">
+      <h1 id="title">
+        <a href="../../../../index.html">Utils</a>
+      </h1>
+      <p class="docdesc">Utils 0.0.1 documentation</p>
+    </div>
+    <div id="headerNav">
+      <div id="searchbox">
+        <form name="search" action="../../../../search.html" method="get">
+          <fieldset class="search">
+            <input type="text" class="hint" name="q" />
+            <button class="button" title="Go" />Go</button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="gnav">
+  <ul>
+    <li class="home"><p><a href="../../../../index.html" title="Utils">Utils</a></p></li>
+    <li class="doc"><p><a href="../../../../index.html" title="ドキュメント">ドキュメント</a></p></li>
+    <li class="modindex">
+      <p><a title="Index" href="../../../../genindex.html">Index</a></p>
+    </li>
+  </ul>
+</div>
+  </div>
+  <!-- /header -->
+  
+  
+  <!-- content -->
+  <div id="content">
+    <!-- current document area -->
+    <div id="document" class="left">
+  <h1>Source code for utils.functions.math.coordinate_trans</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<div class="viewcode-block" id="coordinate_transformation_in_angle"><a class="viewcode-back" href="../../../../math.html#utils.functions.math.coordinate_trans.coordinate_transformation_in_angle">[docs]</a><span class="k">def</span> <span class="nf">coordinate_transformation_in_angle</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">base_angle</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Transformation the coordinate in the angle</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    positions : numpy.ndarray</span>
+<span class="sd">        this parameter is composed of xs, ys </span>
+<span class="sd">        should have (2, N) shape </span>
+<span class="sd">    base_angle : float [rad]</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    traslated_positions : numpy.ndarray</span>
+<span class="sd">        the shape is (2, N)</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">rot_matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">base_angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">base_angle</span><span class="p">)],</span>
+                  <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">base_angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">base_angle</span><span class="p">)]]</span>
+
+    <span class="n">rot_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rot_matrix</span><span class="p">)</span>
+    
+    <span class="n">translated_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rot_matrix</span><span class="p">,</span> <span class="n">positions</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">translated_positions</span></div>
+
+<div class="viewcode-block" id="coordinate_transformation_in_position"><a class="viewcode-back" href="../../../../math.html#utils.functions.math.coordinate_trans.coordinate_transformation_in_position">[docs]</a><span class="k">def</span> <span class="nf">coordinate_transformation_in_position</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span> <span class="n">base_positions</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Transformation the coordinate in the positions</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    positions : numpy.ndarray</span>
+<span class="sd">        this parameter is composed of xs, ys </span>
+<span class="sd">        should have (2, N) shape </span>
+<span class="sd">    base_positions : numpy.ndarray</span>
+<span class="sd">        this parameter is composed of x, y</span>
+<span class="sd">        shoulg have (2, 1) shape</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    traslated_positions : numpy.ndarray</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">base_positions</span> <span class="o">=</span> <span class="n">base_positions</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">translated_positions</span> <span class="o">=</span> <span class="n">positions</span> <span class="o">-</span> <span class="n">base_positions</span>
+
+    <span class="k">return</span> <span class="n">translated_positions</span></div>
+
+<span class="c1"># def coordinate_inv_transformation</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">positions_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]])</span>
+    <span class="n">base_angle</span> <span class="o">=</span> <span class="mf">1.25</span>
+
+    <span class="n">translated_positions_1</span> <span class="o">=</span> <span class="n">coordinate_transformation_in_angle</span><span class="p">(</span><span class="n">positions_1</span><span class="p">,</span> <span class="n">base_angle</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">translated_positions_1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+    <!-- /current document area -->
+    <!-- sidebar -->
+    
+  <div id="sidebar" class="left">
+    <div id="sidebarWrap">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>
+    <!-- /sidebar -->
+  </div>
+  
+  <!-- /content -->
+</div>
+  <!-- footer -->
+  <div id="footer">
+  <div class="footerCol">
+    <h1><a href="../../../../index.html">Utils</a></h1>
+    <p class="copy">
+      &copy; Copyright 2018, Shunichi Sekiguchi.
+    </p>
+    <p class="sp">
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </p>
+  </div>
+  <div class="footerCol">
+    
+  <div class="relbar">
+  </div>
+  </div>
+</div>
+  
+  <!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Utilities related to plot data &mdash; Utils 0.0.1 documentation</title>
+  
+    <link rel="stylesheet" href="_static/general.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="search" title="Search" href="search.html" />
+  <!-- Sticky footer -->
+  <!--[if  IE 8]>
+  <style type="text/css">
+    #wrap {display:table;}
+  </style>
+  <![endif]--> 
+</head>
+<body>
+<div id="wrapper">
+  
+  <!-- header -->
+  <div id="header">
+    <div id="projInfo">
+      <h1 id="title">
+        <a href="index.html">Utils</a>
+      </h1>
+      <p class="docdesc">Utils 0.0.1 documentation</p>
+    </div>
+    <div id="headerNav">
+      <div id="searchbox">
+        <form name="search" action="search.html" method="get">
+          <fieldset class="search">
+            <input type="text" class="hint" name="q" />
+            <button class="button" title="Go" />Go</button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="gnav">
+  <ul>
+    <li class="home"><p><a href="index.html" title="Utils">Utils</a></p></li>
+    <li class="doc"><p><a href="index.html" title="ドキュメント">ドキュメント</a></p></li>
+    <li class="modindex">
+      <p><a title="Index" href="genindex.html">Index</a></p>
+    </li>
+  </ul>
+</div>
+  </div>
+  <!-- /header -->
+  
+  
+  <!-- content -->
+  <div id="content">
+    <!-- current document area -->
+    <div id="document" class="left">
+  <div class="section" id="utilities-related-to-plot-data">
+<h1>Utilities related to plot data<a class="headerlink" href="#utilities-related-to-plot-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-utils.functions.plot.drawing">
+<span id="drawing-objest"></span><h2>drawing objest<a class="headerlink" href="#module-utils.functions.plot.drawing" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="utils.functions.plot.drawing.circle_make">
+<code class="descclassname">utils.functions.plot.drawing.</code><code class="descname">circle_make</code><span class="sig-paren">(</span><em>center_x</em>, <em>center_y</em>, <em>radius</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/functions/plot/drawing.html#circle_make"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.functions.plot.drawing.circle_make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create circle matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>center_x</strong> (<em>float</em>) – the center x position of the circle</li>
+<li><strong>center_y</strong> (<em>float</em>) – the center y position of the circle</li>
+<li><strong>radius</strong> (<em>float</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>circle x</strong> (<em>numpy.ndarray</em>)</li>
+<li><strong>circle y</strong> (<em>numpy.ndarray</em>)</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.functions.plot.drawing.circle_make_with_angles">
+<code class="descclassname">utils.functions.plot.drawing.</code><code class="descname">circle_make_with_angles</code><span class="sig-paren">(</span><em>center_x</em>, <em>center_y</em>, <em>radius</em>, <em>angle</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/functions/plot/drawing.html#circle_make_with_angles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.functions.plot.drawing.circle_make_with_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create circle matrix with angle line matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>center_x</strong> (<em>float</em>) – the center x position of the circle</li>
+<li><strong>center_y</strong> (<em>float</em>) – the center y position of the circle</li>
+<li><strong>radius</strong> (<em>float</em>) – </li>
+<li><strong>angle</strong> (<em>float</em><em> [</em><em>rad</em><em>]</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>circle xs</strong> (<em>numpy.ndarray</em>)</li>
+<li><strong>circle ys</strong> (<em>numpy.ndarray</em>)</li>
+<li><strong>angle line xs</strong> (<em>numpy.ndarray</em>)</li>
+<li><strong>angle line ys</strong> (<em>numpy.ndarray</em>)</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+    <!-- /current document area -->
+    <!-- sidebar -->
+    
+  <div id="sidebar" class="left">
+    <div id="sidebarWrap">
+  <div id="toc" class="sidebarRow">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utilities related to plot data</a><ul>
+<li><a class="reference internal" href="#module-utils.functions.plot.drawing">drawing objest</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="rel" class="sidebarRow">
+  <div class="relRow prev">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="models.html"
+                        title="previous chapter">Utilities related to robot’s models</a></p>
+  </div>
+</div>
+  <div id="source" class="sidebarRow">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/plot.rst.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  </div>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>
+    <!-- /sidebar -->
+  </div>
+  
+  <!-- /content -->
+</div>
+  <!-- footer -->
+  <div id="footer">
+  <div class="footerCol">
+    <h1><a href="index.html">Utils</a></h1>
+    <p class="copy">
+      &copy; Copyright 2018, Shunichi Sekiguchi.
+    </p>
+    <p class="sp">
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </p>
+  </div>
+  <div class="footerCol">
+    
+  <div class="relbar">
+    <dl id="relPrev">
+      <dt class="prev">Previous topic</dt>
+      <dd class="relTitle"><a href="models.html" title="previous chapter" accesskey="N">Utilities related to robot’s models</a></dd>
+    </dl>
+  </div>
+  </div>
+</div>
+  
+  <!-- /footer -->
+</body>
+</html>

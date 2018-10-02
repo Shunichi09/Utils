@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>utils.func_angle &mdash; Utils 0.0.1 documentation</title>
+  
+    <link rel="stylesheet" href="../../_static/general.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="search" title="Search" href="../../search.html" />
+  <!-- Sticky footer -->
+  <!--[if  IE 8]>
+  <style type="text/css">
+    #wrap {display:table;}
+  </style>
+  <![endif]--> 
+</head>
+<body>
+<div id="wrapper">
+  
+  <!-- header -->
+  <div id="header">
+    <div id="projInfo">
+      <h1 id="title">
+        <a href="../../index.html">Utils</a>
+      </h1>
+      <p class="docdesc">Utils 0.0.1 documentation</p>
+    </div>
+    <div id="headerNav">
+      <div id="searchbox">
+        <form name="search" action="../../search.html" method="get">
+          <fieldset class="search">
+            <input type="text" class="hint" name="q" />
+            <button class="button" title="Go" />Go</button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="gnav">
+  <ul>
+    <li class="home"><p><a href="../../index.html" title="Utils">Utils</a></p></li>
+    <li class="doc"><p><a href="../../index.html" title="ドキュメント">ドキュメント</a></p></li>
+    <li class="modindex">
+      <p><a title="Index" href="../../genindex.html">Index</a></p>
+    </li>
+  </ul>
+</div>
+  </div>
+  <!-- /header -->
+  
+  
+  <!-- content -->
+  <div id="content">
+    <!-- current document area -->
+    <div id="document" class="left">
+  <h1>Source code for utils.func_angle</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">copy</span> 
+
+<div class="viewcode-block" id="rad_to_deg"><a class="viewcode-back" href="../../func_angle.html#utils.func_angle.rad_to_deg">[docs]</a><span class="k">def</span> <span class="nf">rad_to_deg</span><span class="p">(</span><span class="n">rad_angle</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Translate rad to deg</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    angle : float or numpy.ndarray [rad]</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    deg_angle : float or numpy.ndarray [deg]</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">deg_angle</span> <span class="o">=</span> <span class="mf">180.0</span> <span class="o">*</span> <span class="n">rad_angle</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="k">return</span> <span class="n">deg_angle</span></div>
+
+<div class="viewcode-block" id="deg_to_rad"><a class="viewcode-back" href="../../func_angle.html#utils.func_angle.deg_to_rad">[docs]</a><span class="k">def</span> <span class="nf">deg_to_rad</span><span class="p">(</span><span class="n">deg_angle</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Translate deg to radian</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    angle : float or numpy.ndarray [deg]</span>
+<span class="sd">        unit is radians</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    rad_angle : float or numpy.ndarray [rad]</span>
+<span class="sd">        correct range angle</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">rad_angle</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">deg_angle</span> <span class="o">/</span> <span class="mf">180.0</span>
+
+    <span class="k">return</span> <span class="n">rad_angle</span></div>
+
+<div class="viewcode-block" id="angle_range_corrector"><a class="viewcode-back" href="../../func_angle.html#utils.func_angle.angle_range_corrector">[docs]</a><span class="k">def</span> <span class="nf">angle_range_corrector</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">MAX</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">MIN</span><span class="o">=-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Check angle range and correct the range</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    -------</span>
+<span class="sd">    angle : numpy.ndarray </span>
+<span class="sd">        unit is radians</span>
+<span class="sd">    MAX : float</span>
+<span class="sd">        maximum of range [rad] , default math.pi</span>
+<span class="sd">    MIN : float</span>
+<span class="sd">        minimum of range [rad], default -math.pi</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    correct_angle : numpy.ndarray</span>
+<span class="sd">        correct range angle</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">correct_angle</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">correct_angle</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">MAX</span><span class="p">:</span>
+                <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span>  <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+        <span class="k">elif</span> <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">:</span>
+                <span class="n">correct_angle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span>  <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="n">correct_angle</span> <span class="o">=</span> <span class="n">correct_angle</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">angle</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">correct_angle</span></div>
+</pre></div>
+
+    </div>
+    <!-- /current document area -->
+    <!-- sidebar -->
+    
+  <div id="sidebar" class="left">
+    <div id="sidebarWrap">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>
+    <!-- /sidebar -->
+  </div>
+  
+  <!-- /content -->
+</div>
+  <!-- footer -->
+  <div id="footer">
+  <div class="footerCol">
+    <h1><a href="../../index.html">Utils</a></h1>
+    <p class="copy">
+      &copy; Copyright 2018, Shunichi Sekiguchi.
+    </p>
+    <p class="sp">
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </p>
+  </div>
+  <div class="footerCol">
+    
+  <div class="relbar">
+  </div>
+  </div>
+</div>
+  
+  <!-- /footer -->
+</body>
+</html>

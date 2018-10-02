@@ -1,0 +1,468 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <title>Utilities related to robot’s models &mdash; Utils 0.0.1 documentation</title>
+  
+    <link rel="stylesheet" href="_static/general.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="search" title="Search" href="search.html" />
+  <!-- Sticky footer -->
+  <!--[if  IE 8]>
+  <style type="text/css">
+    #wrap {display:table;}
+  </style>
+  <![endif]--> 
+</head>
+<body>
+<div id="wrapper">
+  
+  <!-- header -->
+  <div id="header">
+    <div id="projInfo">
+      <h1 id="title">
+        <a href="index.html">Utils</a>
+      </h1>
+      <p class="docdesc">Utils 0.0.1 documentation</p>
+    </div>
+    <div id="headerNav">
+      <div id="searchbox">
+        <form name="search" action="search.html" method="get">
+          <fieldset class="search">
+            <input type="text" class="hint" name="q" />
+            <button class="button" title="Go" />Go</button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="gnav">
+  <ul>
+    <li class="home"><p><a href="index.html" title="Utils">Utils</a></p></li>
+    <li class="doc"><p><a href="index.html" title="ドキュメント">ドキュメント</a></p></li>
+    <li class="modindex">
+      <p><a title="Index" href="genindex.html">Index</a></p>
+    </li>
+  </ul>
+</div>
+  </div>
+  <!-- /header -->
+  
+  
+  <!-- content -->
+  <div id="content">
+    <!-- current document area -->
+    <div id="document" class="left">
+  <div class="section" id="utilities-related-to-robot-s-models">
+<h1>Utilities related to robot’s models<a class="headerlink" href="#utilities-related-to-robot-s-models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-utils.models.robot">
+<span id="wheeled-type"></span><h2>Wheeled type<a class="headerlink" href="#module-utils.models.robot" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="utils.models.robot.OmniWheeledRobot">
+<em class="property">class </em><code class="descclassname">utils.models.robot.</code><code class="descname">OmniWheeledRobot</code><span class="sig-paren">(</span><em>init_x</em>, <em>init_y</em>, <em>init_th</em>, <em>max_x_acceleration=1.0</em>, <em>min_x_acceleration=-1.0</em>, <em>max_y_acceleration=1.0</em>, <em>min_y_acceleration=-1.0</em>, <em>max_ang_acceleration=1.75</em>, <em>min_ang_acceleration=-1.75</em>, <em>max_x_velo=1.5</em>, <em>min_x_velo=-1.5</em>, <em>max_y_velo=1.5</em>, <em>min_y_velo=-1.5</em>, <em>max_ang_velo=3.141592653589793</em>, <em>min_ang_velo=-3.141592653589793</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#OmniWheeledRobot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot class of Omni_wheeled robot model</p>
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.x">
+<code class="descname">x</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.x" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in meters</em> – now position x</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.y">
+<code class="descname">y</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in meters</em> – now position y</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.th">
+<code class="descname">th</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.th" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in radians</em> – now position th</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.history_x">
+<code class="descname">history_x</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.history_x" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history position x</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.history_y">
+<code class="descname">history_y</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.history_y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history position y</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.history_th">
+<code class="descname">history_th</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.history_th" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history th</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.max_x_acceleration">
+<code class="descname">max_x_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.max_x_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.min_x_acceleration">
+<code class="descname">min_x_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.min_x_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.max_y_acceleration">
+<code class="descname">max_y_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.max_y_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.min_y_acceleration">
+<code class="descname">min_y_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.min_y_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.max_ang_acceleration">
+<code class="descname">max_ang_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.max_ang_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.min_ang_acceleration">
+<code class="descname">min_ang_acceleration</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.min_ang_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.max_velo">
+<code class="descname">max_velo</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.max_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.min_velo">
+<code class="descname">min_velo</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.min_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.max_ang_velo">
+<code class="descname">max_ang_velo</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.max_ang_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.OmniWheeledRobot.min_ang_velo">
+<code class="descname">min_ang_velo</code><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.min_ang_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s]</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.models.robot.OmniWheeledRobot._check_input">
+<code class="descname">_check_input</code><span class="sig-paren">(</span><em>u_v_x</em>, <em>u_v_y</em>, <em>u_th</em>, <em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#OmniWheeledRobot._check_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot._check_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the speed range</p>
+<dl class="docutils">
+<dt>u_v_x <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>u_v_y <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>u_th <span class="classifier-delimiter">:</span> <span class="classifier">float in [rad/s]</span></dt>
+<dd>t time of angular velocity input</dd>
+<dt>dt <span class="classifier-delimiter">:</span> <span class="classifier">float in seconds, optional</span></dt>
+<dd>sampling time, default is 0.01 [s]</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>correct_u_v_x</strong> (<em>float in [m/s]</em>) – possible velocity inputs</li>
+<li><strong>correct_u_v_y</strong> (<em>float in [m/s]</em>) – possible velocity inputs</li>
+<li><strong>correct_u_th</strong> (<em>float [rad/s]</em>) – possible angular velocity inputs</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.models.robot.OmniWheeledRobot.update_state">
+<code class="descname">update_state</code><span class="sig-paren">(</span><em>u_v_x</em>, <em>u_v_y</em>, <em>u_th</em>, <em>dt=0.01</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#OmniWheeledRobot.update_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.OmniWheeledRobot.update_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the state of robot</p>
+<dl class="docutils">
+<dt>u_v_x <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>u_v_y <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>u_th <span class="classifier-delimiter">:</span> <span class="classifier">float in [rad/s]</span></dt>
+<dd>t time of angular velocity input</dd>
+<dt>dt <span class="classifier-delimiter">:</span> <span class="classifier">float in seconds, optional</span></dt>
+<dd>sampling time, default is 0.01 [s]</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>x</strong> (<em>float [m]</em>) – now position x</li>
+<li><strong>y</strong> (<em>float [m]</em>) – now position y</li>
+<li><strong>th</strong> (<em>float [rad]</em>) – now angle th</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="utils.models.robot.TwoWheeledRobot">
+<em class="property">class </em><code class="descclassname">utils.models.robot.</code><code class="descname">TwoWheeledRobot</code><span class="sig-paren">(</span><em>init_x</em>, <em>init_y</em>, <em>init_th</em>, <em>max_acceleration=1.0</em>, <em>min_acceleration=-1.0</em>, <em>max_ang_acceleration=1.75</em>, <em>min_ang_acceleration=-1.75</em>, <em>max_velo=1.5</em>, <em>min_velo=-1.5</em>, <em>max_ang_velo=3.141592653589793</em>, <em>min_ang_velo=-3.141592653589793</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#TwoWheeledRobot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Robot class of Two_wheeled robot model</p>
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.x">
+<code class="descname">x</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.x" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in meters</em> – now position x</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.y">
+<code class="descname">y</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in meters</em> – now position y</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.th">
+<code class="descname">th</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.th" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in radians</em> – now position th</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.history_x">
+<code class="descname">history_x</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.history_x" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history position x</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.history_y">
+<code class="descname">history_y</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.history_y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history position y</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.history_th">
+<code class="descname">history_th</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.history_th" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of float</em> – time history th</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.max_acceleration">
+<code class="descname">max_acceleration</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.max_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.min_acceleration">
+<code class="descname">min_acceleration</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.min_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.max_ang_acceleration">
+<code class="descname">max_ang_acceleration</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.max_ang_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.min_ang_acceleration">
+<code class="descname">min_ang_acceleration</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.min_ang_acceleration" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s^2]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.max_velo">
+<code class="descname">max_velo</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.max_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.min_velo">
+<code class="descname">min_velo</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.min_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [m/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.max_ang_velo">
+<code class="descname">max_ang_velo</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.max_ang_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s]</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="utils.models.robot.TwoWheeledRobot.min_ang_velo">
+<code class="descname">min_ang_velo</code><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.min_ang_velo" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float in [rad/s]</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.models.robot.TwoWheeledRobot._check_input">
+<code class="descname">_check_input</code><span class="sig-paren">(</span><em>u_v</em>, <em>u_th</em>, <em>dt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#TwoWheeledRobot._check_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot._check_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the speed range</p>
+<dl class="docutils">
+<dt>u_th <span class="classifier-delimiter">:</span> <span class="classifier">float in [rad/s]</span></dt>
+<dd>t time of angular velocity input</dd>
+<dt>u_v <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>dt <span class="classifier-delimiter">:</span> <span class="classifier">float in seconds</span></dt>
+<dd>sampling time</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>correct_u_v</strong> (<em>float in [m/s]</em>) – possible velocity inputs</li>
+<li><strong>correct_u_th</strong> (<em>float [rad/s]</em>) – possible angular velocity inputs</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="utils.models.robot.TwoWheeledRobot.update_state">
+<code class="descname">update_state</code><span class="sig-paren">(</span><em>u_v</em>, <em>u_th</em>, <em>dt=0.01</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/utils/models/robot.html#TwoWheeledRobot.update_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#utils.models.robot.TwoWheeledRobot.update_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the state of robot</p>
+<dl class="docutils">
+<dt>u_v <span class="classifier-delimiter">:</span> <span class="classifier">float in [m/s]</span></dt>
+<dd>t time of velocity input</dd>
+<dt>u_th <span class="classifier-delimiter">:</span> <span class="classifier">float in [rad/s]</span></dt>
+<dd>t time of angular velocity input</dd>
+<dt>dt <span class="classifier-delimiter">:</span> <span class="classifier">float in seconds, optional</span></dt>
+<dd>sampling time, default is 0.01 [s]</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>x</strong> (<em>float [m]</em>) – now position x</li>
+<li><strong>y</strong> (<em>float [m]</em>) – now position y</li>
+<li><strong>th</strong> (<em>float [rad]</em>) – now angle th</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+    <!-- /current document area -->
+    <!-- sidebar -->
+    
+  <div id="sidebar" class="left">
+    <div id="sidebarWrap">
+  <div id="toc" class="sidebarRow">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utilities related to robot’s models</a><ul>
+<li><a class="reference internal" href="#module-utils.models.robot">Wheeled type</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<div id="rel" class="sidebarRow">
+  <div class="relRow prev">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="math.html"
+                        title="previous chapter">Utilities related to math</a></p>
+  </div>
+  <div class="relRow prev">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot.html"
+                        title="next chapter">Utilities related to plot data</a></p>
+  </div>
+</div>
+  <div id="source" class="sidebarRow">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/models.rst.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+  </div>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+  </div>
+    <!-- /sidebar -->
+  </div>
+  
+  <!-- /content -->
+</div>
+  <!-- footer -->
+  <div id="footer">
+  <div class="footerCol">
+    <h1><a href="index.html">Utils</a></h1>
+    <p class="copy">
+      &copy; Copyright 2018, Shunichi Sekiguchi.
+    </p>
+    <p class="sp">
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 1.7.9.
+    </p>
+  </div>
+  <div class="footerCol">
+    
+  <div class="relbar">
+    <dl id="relPrev">
+      <dt class="prev">Previous topic</dt>
+      <dd class="relTitle"><a href="math.html" title="previous chapter" accesskey="N">Utilities related to math</a></dd>
+    </dl>
+    <dl id="relNext">
+      <dt class="next">Next topic</dt>
+      <dd class="relTitle"><a href="plot.html" title="next chapter" >Utilities related to plot data</a></dd>
+    </dl>
+  </div>
+  </div>
+</div>
+  
+  <!-- /footer -->
+</body>
+</html>

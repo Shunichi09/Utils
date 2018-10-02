@@ -5,7 +5,7 @@ class TwoWheeledRobot():
     Robot class of Two_wheeled robot model
 
     Attributes
-    ----------
+    -----------
     x : float in meters
         now position x
     y : float in meters
@@ -32,8 +32,9 @@ class TwoWheeledRobot():
                 max_acceleration=1.0, min_acceleration=-1.0, max_ang_acceleration=1.75, min_ang_acceleration=-1.75, 
                 max_velo=1.5, min_velo=-1.5, max_ang_velo=math.pi, min_ang_velo=-math.pi):
         """
+        
         Parameters
-        -----------
+        ------------
         init_x : float in meters
             initial position x
         init_y : float in meters

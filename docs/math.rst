@@ -5,11 +5,11 @@ Utilities related to math
 Angle
 =======================
 
-.. automodule:: utils.func_angle
+.. automodule:: utils.functions.math.angle
    :members:
 
 Coordinate transformation
 ==========================
 
-.. automodule:: utils.func_coordinate_trans
+.. automodule:: utils.functions.math.coordinate_trans
    :members:

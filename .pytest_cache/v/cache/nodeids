@@ -1,0 +1,10 @@
+[
+  "tests/test_func_angle.py::test_deg_to_rad",
+  "tests/test_func_angle.py::test_rad_to_deg",
+  "tests/test_func_angle.py::test_angle_range_correcter",
+  "tests/test_func_coordinate_trans.py::test_coordinate_transformation_in_angle",
+  "tests/test_func_coordinate_trans.py::test_coordinate_transformation_in_position",
+  "tests/test_func_data.py::test_read_csv_with_header",
+  "tests/test_func_drawing.py::test_cicle_make",
+  "tests/test_func_drawing.py::test_cicle_make_with_angle"
+]

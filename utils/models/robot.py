@@ -86,7 +86,7 @@ class TwoWheeledRobot():
     def update_state(self, u_v, u_th, dt=0.01): # stateを更新
         """ Update the state of robot
 
-        Parameter
+        Parameters
         ----------
         u_v : float in [m/s]
             t time of velocity input 
@@ -95,7 +95,7 @@ class TwoWheeledRobot():
         dt : float in seconds, optional
             sampling time, default is 0.01 [s]
 
-        Return
+        Returns
         ----------
         x : float [m]
             now position x
@@ -127,7 +127,7 @@ class TwoWheeledRobot():
     def _check_input(self, u_v, u_th, dt):
         """ Check the speed range
 
-        Parameter
+        Parameters
         ----------
         u_th : float in [rad/s]
             t time of angular velocity input
@@ -136,7 +136,7 @@ class TwoWheeledRobot():
         dt : float in seconds
             sampling time
         
-        Return
+        Returns
         ----------
         correct_u_v : float in [m/s]
             possible velocity inputs
@@ -274,7 +274,7 @@ class OmniWheeledRobot():
     def update_state(self, u_v_x, u_v_y, u_th, dt=0.01):
         """ Update the state of robot
 
-        Parameter
+        Parameters
         ----------
         u_v_x : float in [m/s]
             t time of velocity input
@@ -285,7 +285,7 @@ class OmniWheeledRobot():
         dt : float in seconds, optional
             sampling time, default is 0.01 [s]
 
-        Return
+        Returns
         ----------
         x : float [m]
             now position x
@@ -318,7 +318,7 @@ class OmniWheeledRobot():
     def _check_input(self, u_v_x, u_v_y, u_th, dt):
         """ Check the speed range
 
-        Parameter
+        Parameters
         ----------
         u_v_x : float in [m/s]
             t time of velocity input
@@ -329,7 +329,7 @@ class OmniWheeledRobot():
         dt : float in seconds, optional
             sampling time, default is 0.01 [s]
         
-        Return
+        Returns
         ----------
         correct_u_v_x : float in [m/s]
             possible velocity inputs

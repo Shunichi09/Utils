@@ -8,3 +8,4 @@ Wheeled type
 .. automodule:: utils.models.robot
    :members:
    :private-members:
+   :special-members:

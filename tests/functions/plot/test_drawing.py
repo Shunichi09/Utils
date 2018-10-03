@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import math
 
-from utils.functions.plot.drawing import circle_make, circle_make_with_angles
+from utils.functions.plot.drawing import circle_make, circle_make_with_angles, square_make_with_angles
 
 class TestDrawing(object):
     def test_cicle_make(self):
@@ -48,6 +48,25 @@ class TestDrawing(object):
         assert len([i for i in ys if i < y - radius]) == 0 # minimum y
         assert not dis_check_1 # distance checking
         assert not dis_check_2
+
+    def test_square_make_with_angle(self):
+        x = 1.0
+        y = 2.0
+        angle = 2.0
+        size = 1.0
+
+        xs, ys, angle_xs, angle_ys = square_make_with_angles(x, y, size, angle)
+
+        assert xs.shape[0] == 5
+
+        for i in range(xs.shape[0]):
+            dis = math.sqrt((xs[i] - x)**2 + (ys[i] - y)**2)
+            assert round(dis, 5) == round(math.sqrt(2.0), 5)
+            
+        assert round(xs[0], 5) == -0.32544
+        assert round(ys[0], 5) == 2.49315
+        assert round(xs[1], 5) == 0.50685
+        assert round(ys[1], 5) == 0.67456
     
 if __name__ == '__main__':
     pytest.main()

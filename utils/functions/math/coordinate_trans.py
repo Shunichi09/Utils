@@ -11,7 +11,7 @@ def coordinate_transformation_in_angle(positions, base_angle):
     positions : numpy.ndarray
         this parameter is composed of xs, ys 
         should have (2, N) shape 
-    base_angle : float [rad]
+    base_angle : float in radians
     
     Returns
     -------

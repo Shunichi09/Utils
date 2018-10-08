@@ -3,7 +3,7 @@ import numpy as np
 import copy 
 
 def rad_to_deg(rad_angle):
-    '''
+    """
     Translate rad to deg
 
     Parameters
@@ -13,14 +13,14 @@ def rad_to_deg(rad_angle):
     Returns
     -------
     deg_angle : float or numpy.ndarray [deg]
-    '''
+    """
 
     deg_angle = 180.0 * rad_angle / math.pi
 
     return deg_angle
 
 def deg_to_rad(deg_angle):
-    '''
+    """
     Translate deg to radian
 
     Parameters
@@ -32,12 +32,13 @@ def deg_to_rad(deg_angle):
     -------
     rad_angle : float or numpy.ndarray [rad]
         correct range angle
-    '''
+    """
+
     rad_angle = math.pi * deg_angle / 180.0
 
     return rad_angle
 
-def fit_angle_in_range(angles, min_angle=0.0, max_angle=(2 * math.pi)):
+def fit_angle_in_range_deg(angles, min_angle=0.0, max_angle=(2 * math.pi)):
     """
     Check angle range and correct the range
 
@@ -73,3 +74,5 @@ def fit_angle_in_range(angles, min_angle=0.0, max_angle=(2 * math.pi)):
 
     output = np.minimum(max_angle, np.maximum(min_angle, output))
     return output.reshape(output_shape)
+
+def fit_angle_in_range_rad()

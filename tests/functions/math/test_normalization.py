@@ -30,6 +30,19 @@ class Testnormalization(object):
                 if normalized_data[i, j] > 1.0 or normalized_data[i, j] < 0.0:
                     assert False
 
+    def test_normalize_by_min_max_diff_range(self):
+        data = np.random.rand(3, 100) * 3.0 - 2.1
+        normalized_data = normalize_by_min_max(data, min_value=-1.0, max_value=5.0)
+
+        assert data.shape == normalized_data.shape
+        assert np.argmin(data) == np.argmin(normalized_data)
+        assert np.argmax(data) == np.argmax(normalized_data)
+
+        for i in range(data.shape[0]):
+            for j in range(data.shape[1]):
+                if normalized_data[i, j] < -1.0 or normalized_data[i, j] > 5.0:
+                    assert False
+                    
     def test_normalize_by_min_max_wrong_value(self):
         with pytest.raises(ValueError):
             data = np.random.rand(3, 100) * 3.0 - 2.1

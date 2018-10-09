@@ -28,7 +28,7 @@ def normalize_by_min_max(data, min_value=0.0, max_value=1.0):
     max_data = np.amax(data)
     min_data = np.amin(data)
 
-    normalized_data = ((data - min_data) / (max_data - min_data)) * (max_value - min_value) - min_value
+    normalized_data = ((data - min_data) / (max_data - min_data)) * (max_value - min_value) + min_value
 
     return normalized_data.reshape(data_shape)
 

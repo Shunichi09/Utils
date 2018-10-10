@@ -26,8 +26,7 @@ class TestAngle(object):
             if angle < 0.0 or angle > 2 * math.pi:
                 assert False
             
-            if round(math.cos(float(angle)), 5) != round(math.cos(angles[i]), 5) or\
-               round(math.sin(float(angle)), 5) != round(math.sin(angles[i]), 5):
+            if round(math.cos(float(angle)), 5) != round(math.cos(angles[i]), 5) or round(math.sin(float(angle)), 5) != round(math.sin(angles[i]), 5):
                 assert False
 
     def test_fit_angle_in_rad_range_matrix(self):
@@ -39,8 +38,7 @@ class TestAngle(object):
                 if angle < 0.0 or angle > 2 * math.pi:
                     assert False
                 
-                if round(math.cos(float(angle)), 5) != round(math.cos(angles[i, j]), 5) or\
-                   round(math.sin(float(angle)), 5) != round(math.sin(angles[i, j]), 5):
+                if round(math.cos(float(angle)), 5) != round(math.cos(angles[i, j]), 5) or round(math.sin(float(angle)), 5) != round(math.sin(angles[i, j]), 5):
                     assert False
 
     def test_fit_angle_in_diff_rad_range_matrix(self):
@@ -52,8 +50,7 @@ class TestAngle(object):
                 if angle < -math.pi or angle > math.pi:
                     assert False
                 
-                if round(math.cos(float(angle)), 5) != round(math.cos(angles[i, j]), 5) or\
-                   round(math.sin(float(angle)), 5) != round(math.sin(angles[i, j]), 5):
+                if round(math.cos(float(angle)), 5) != round(math.cos(angles[i, j]), 5) or round(math.sin(float(angle)), 5) != round(math.sin(angles[i, j]), 5):
                     assert False
     
     def test_fit_angle_in_rad_range_wrong_range(self):
@@ -74,8 +71,7 @@ class TestAngle(object):
             if angle < 0.0 or angle > 360.0:
                 assert False
 
-            if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i])), 5) or\
-               round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i])), 5):
+            if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i])), 5) or round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i])), 5):
                 assert False
 
     def test_fit_angle_in_deg_range_matrix(self):
@@ -87,8 +83,7 @@ class TestAngle(object):
                 if angle < 0.0 or angle > 360.0:
                     assert False
 
-                if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i, j])), 5) or\
-                   round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i, j])), 5):
+                if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i, j])), 5) or round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i, j])), 5):
                     assert False
 
     def test_fit_angle_in_diff_deg_range_matrix(self):
@@ -100,8 +95,7 @@ class TestAngle(object):
                 if angle < -180.0 or angle > 180.0:
                     assert False
 
-                if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i, j])), 5) or\
-                   round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i, j])), 5):
+                if round(math.cos(float(math.radians(angle))), 5) != round(math.cos(math.radians(angles[i, j])), 5) or round(math.sin(float(math.radians(angle))), 5) != round(math.sin(math.radians(angles[i, j])), 5):
                     assert False
     
     def test_fit_angle_in_deg_range_wrong_range(self):
